@@ -24,6 +24,7 @@ A [calibre](https://calibre-ebook.com/) plugin that computes KOReader-compatible
 1. Download the latest `KoreaderMD5.zip` from [Releases](https://github.com/CloudyMcFox/calibre-koreader-md5/releases)
 2. In calibre: **Preferences → Plugins → Load plugin from file**
 3. Select the ZIP file
+   Recommend you chose to "add to context menu for the book in the calibre library" at a minimum. 
 4. Restart calibre
 
 ### From command line
