@@ -4,7 +4,7 @@ A [calibre](https://calibre-ebook.com/) plugin that computes KOReader-compatible
 
 ## Why?
 
-[KOReader](https://koreader.rocks/) identifies books by a partial MD5 hash of the file. If you want to sync reading progress, highlights, or other metadata between calibre and KOReader and you use KOReaderSync it may need to match on md5 so your calibre entry has to have the same md5 KOReader uses. This plugin will fill in that column for KOReader sync to match
+[KOReader](https://koreader.rocks/) identifies books by a partial MD5 hash of the file. If you want to sync reading progress, highlights, or other metadata between calibre and KOReader and you use the KOReaderSync calibre plugin it may need to match on md5 so your calibre entry has to have the same md5 KOReader uses. This plugin will fill in that column for KOReader sync to match
 
 ## Features
 
@@ -61,4 +61,4 @@ GPL v3 — same as calibre.
 
 ## Author
 
-Ryan Offir
+CloudyMcFox
