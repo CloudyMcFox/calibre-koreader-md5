@@ -48,13 +48,15 @@ KOReader uses a partial MD5 algorithm that reads 1024-byte chunks at exponential
 
 ## Building from Source
 
+On Windows, run the included build script from this folder:
+
 ```powershell
-# Package into a ZIP (requires PowerShell)
-$files = @('__init__.py','ui.py','main.py','config.py','plugin-import-name-koreader_md5.txt')
-# Use System.IO.Compression to preserve images/ path
+.\build.ps1
 ```
 
-Or simply zip all `.py` files + `plugin-import-name-koreader_md5.txt` + `images/icon.png` into a ZIP.
+It creates `KoreaderMD5.zip`, which you install as described in [Installation](#installation).
+
+On other platforms, zip all `.py` files + `plugin-import-name-koreader_md5.txt` + `images/icon.png` into a ZIP, with `__init__.py` at the top level.
 
 ## License
 

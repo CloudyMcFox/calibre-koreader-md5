@@ -24,13 +24,19 @@ if (Test-Path (Join-Path $pluginDir "images\icon.png")) {
     $files += "images\icon.png"
 }
 
-# Create ZIP
-$compress = @{
-    Path = $files | ForEach-Object { Join-Path $pluginDir $_ }
-    DestinationPath = $zipPath
-    Force = $true
+# Create ZIP. Compress-Archive would flatten images\icon.png to icon.png,
+# but the plugin loads 'images/icon.png', so add entries with their paths.
+Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
+$zip = [System.IO.Compression.ZipFile]::Open($zipPath, 'Create')
+try {
+    foreach ($f in $files) {
+        $entry = $f -replace '\\', '/'
+        [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+            $zip, (Join-Path $pluginDir $f), $entry) | Out-Null
+    }
+} finally {
+    $zip.Dispose()
 }
-Compress-Archive @compress
 
 Write-Host "Created: $zipPath"
 Write-Host ""
